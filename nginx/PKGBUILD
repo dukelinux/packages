@@ -1,4 +1,5 @@
 # Maintainer: Steven Medley <smedley76@live.com>
+# Packager: Steven Medley <smedley76@live.com>
 # Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: T.J. Townsend <blakkheim@archlinux.org>
 # Contributor: Massimiliano Torromeo <massimiliano.torromeo@gmail.com>
@@ -12,7 +13,7 @@ pkgbase=nginx
 pkgname=(nginx nginx-src)
 # update tests revision too
 pkgver=1.24.0
-pkgrel=4
+pkgrel=5
 arch=(x86_64)
 url='https://nginx.org'
 license=(custom)
@@ -139,7 +140,7 @@ package_nginx() {
   install -d "$pkgdir"/etc/ngninx/sites-enabled
   install -d "$pkgdir"/etc/ngninx/modules
   install -d "$pkgdir"/usr/lib/nginx/modules
-  ln -sf "$pkgdir"/usr/lib/nginx/modules "$pkgdir"/etc/nginx/modules
+  ln -sf /usr/lib/nginx/modules "$pkgdir"/etc/nginx/modules
 
   chmod 755 "$pkgdir"/var/log/nginx
   chown root:root "$pkgdir"/var/log/nginx
