@@ -1,6 +1,7 @@
-# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
-# Maintainer: T.J. Townsend <blakkheim@archlinux.org>
-# Maintainer: Massimiliano Torromeo <massimiliano.torromeo@gmail.com>
+# Maintainer: Steven Medley <smedley76@live.com>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: T.J. Townsend <blakkheim@archlinux.org>
+# Contributor: Massimiliano Torromeo <massimiliano.torromeo@gmail.com>
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Sébastien Luttringer
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
@@ -11,7 +12,7 @@ pkgbase=nginx
 pkgname=(nginx nginx-src)
 # update tests revision too
 pkgver=1.24.0
-pkgrel=3
+pkgrel=4
 arch=(x86_64)
 url='https://nginx.org'
 license=(custom)
@@ -91,6 +92,7 @@ build() {
     --prefix=/etc/nginx \
     --conf-path=/etc/nginx/nginx.conf \
     --sbin-path=/usr/bin/nginx \
+    --modules-path=/usr/lib/nginx/modules \
     --pid-path=/run/nginx.pid \
     --lock-path=/run/lock/nginx.lock \
     --user=http \
@@ -132,6 +134,12 @@ package_nginx() {
 
   install -d "$pkgdir"/var/lib/nginx
   install -dm700 "$pkgdir"/var/lib/nginx/proxy
+
+  install -d "$pkgdir"/etc/ngninx/sites-available
+  install -d "$pkgdir"/etc/ngninx/sites-enabled
+  install -d "$pkgdir"/etc/ngninx/modules
+  install -d "$pkgdir"/usr/lib/nginx/modules
+  ln -sf "$pkgdir"/usr/lib/nginx/modules "$pkgdir"/etc/nginx/modules
 
   chmod 755 "$pkgdir"/var/log/nginx
   chown root:root "$pkgdir"/var/log/nginx
