@@ -1,0 +1,10 @@
+NAME="Duke Linux"
+PRETTY_NAME="Duke Linux"
+ID=duke
+BUILD_ID=rolling
+ANSI_COLOR="38;2;23;147;209"
+HOME_URL="https://dukelinux.org/"
+DOCUMENTATION_URL="https://wiki.dukelinux.org/"
+SUPPORT_URL="https://bbs.dukelinux.org/"
+BUG_REPORT_URL=""
+PRIVACY_POLICY_URL=""
