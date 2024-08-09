@@ -1,0 +1,30 @@
+# Maintainer: Steven Medley <smedley76@gmail.com>
+
+pkgname=base
+pkgver=1
+pkgrel=1
+pkgdesc='Minimal package set to define a basic Duke Linux installation'
+url='https://www.dukelinux.org'
+arch=('any')
+license=('GPL')
+depends=(
+  # base
+  'base-devel' 'linux' 'linux-firmware' 'filesystem' 'gcc-libs' 'glibc' 'bash'
+
+  # POSIX tools
+  'coreutils' 'file' 'findutils' 'gawk' 'grep' 'procps-ng' 'sed' 'tar'
+
+  # standard toolset
+  'gettext' 'pciutils' 'psmisc' 'shadow' 'util-linux' 'bzip2' 'gzip' 'xz'
+
+  # distro defined requirements
+  'licenses' 'pacman' 'pacman-contrib' 'dukelinux-keyring' 'systemd' 'systemd-sysvcompat'
+
+  # networking, ping, etc
+  'ufw' 'iputils' 'iproute2' 'wget'
+
+  # misc
+  'nano' 'git' 
+)
+
+# vim:set sw=2 sts=-1 et:
