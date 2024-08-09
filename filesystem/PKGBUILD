@@ -164,7 +164,7 @@ package() {
 
   # associative array of target files, their source file, file mode, user and group ownership
   files=(
-    ["etc/arch-release"]="arch-release:644:0:0"
+    ["etc/duke-release"]="duke-release:644:0:0"
     ["etc/crypttab"]="crypttab:600:0:0"
     ["etc/fstab"]="fstab:644:0:0"
     ["etc/group"]="group:644:0:0"
@@ -188,7 +188,7 @@ package() {
     ["usr/lib/sysusers.d/arch.conf"]="sysusers:644:0:0"
     ["usr/lib/tmpfiles.d/arch.conf"]="tmpfiles:644:0:0"
     ["usr/lib/systemd/system-environment-generators/10-arch"]="env-generator:755:0:0"
-    ["usr/share/factory/etc/arch-release"]="arch-release:644:0:0"
+    ["usr/share/factory/etc/duke-release"]="duke-release:644:0:0"
     ["usr/share/factory/etc/crypttab"]="crypttab:600:0:0"
     ["usr/share/factory/etc/fstab"]="fstab:644:0:0"
     ["usr/share/factory/etc/group"]="group:644:0:0"
@@ -207,10 +207,6 @@ package() {
     ["usr/share/factory/etc/shells"]="shells:644:0:0"
     ["usr/share/factory/etc/subgid"]="subgid:644:0:0"
     ["usr/share/factory/etc/subuid"]="subuid:644:0:0"
-    ["usr/share/pixmaps/archlinux-logo.png"]="archlinux-logo.png:644:0:0"
-    ["usr/share/pixmaps/archlinux-logo.svg"]="archlinux-logo.svg:644:0:0"
-    ["usr/share/pixmaps/archlinux-logo-text.svg"]="archlinux-logo-text.svg:644:0:0"
-    ["usr/share/pixmaps/archlinux-logo-text-dark.svg"]="archlinux-logo-text-dark.svg:644:0:0"
   )
 
   cd "$pkgdir"
