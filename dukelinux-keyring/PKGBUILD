@@ -1,0 +1,21 @@
+pkgname=dukelinux-keyring
+pkgver=20240812
+pkgrel=3
+pkgdesc='Dukelinux keyring'
+arch=('any')
+url='https://dukelinux.org/'
+license=('GPL')
+install="${pkgname}.install"
+source=('https://raw.githubusercontent.com/dukelinux/dukelinux-keyring/main/Makefile'
+        'https://raw.githubusercontent.com/dukelinux/dukelinux-keyring/main/dukelinux.gpg'
+        'https://raw.githubusercontent.com/dukelinux/dukelinux-keyring/main/dukelinux-revoked'
+        'https://raw.githubusercontent.com/dukelinux/dukelinux-keyring/main/dukelinux-trusted')
+validpgpkeys=('1654964F655779070C9FCB50F8C629A0EBCA8D6A')
+sha256sums=('30201d1deadb91fe24e7f8c4e2613b86937d7a8131b4c72fe4a0996e8cbbe834'
+            '10a0e071d7eb3f6c7c0413a4d7c1f2298a8982d1e457399f20bae322423fa3fd'
+            'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
+            '3db0fbb91b824033143e4adfde512826b8eedc59f91fc89e1c95ca02bcf4a508')
+package() {
+	cd "${srcdir}"
+	make PREFIX=/usr DESTDIR=${pkgdir} install
+}
