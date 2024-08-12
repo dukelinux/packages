@@ -1,11 +1,10 @@
 pkgbase = aesr
 	pkgdesc = AES encryption and decryption script with support for files
 	pkgver = 1.0.0
-	pkgrel = 2
+	pkgrel = 3
 	url = https://github.com/dukelinux/aesr
 	arch = any
 	license = GPL
-	makedepends = git
 	depends = python
 	depends = python-cryptography
 	source = https://github.com/dukelinux/aesr/archive/refs/tags/v1.0.0.tar.gz
